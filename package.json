@@ -1,0 +1,26 @@
+{
+  "name": "life_assist",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.blocksglobal.com:templates/life_assist.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "gulp": "~3.9.0",
+    "gulp-concat": "~2.2.0",
+    "gulp-uglify": "~0.2.1",
+    "gulp-sass": "~2.0.4",
+    "gulp-minify-css": "~1.2.1",
+    "gulp-livereload": "~1.5.0",
+    "requirejs": "~2.1.14",
+    "gulp-strip-debug": "~0.3.0",
+    "gulp-rename": "~1.2.0"
+  }
+}

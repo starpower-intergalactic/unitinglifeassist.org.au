@@ -1,0 +1,47 @@
+$iconWidth : 18px;
+
+.icon {
+	display: inline-block;
+	width: $iconWidth;
+	height: $iconWidth;
+	background-image: url(../img/site/icon_sprite_misc_2x.png);
+	background-size: 4*$iconWidth auto;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+
+.no-backgroundsize {
+	.icon {
+		background-image: url(../img/site/icon_sprite_misc_1x.png);
+	}
+}
+
+.icon--arrow-right { background-position: 0 0; }
+.icon--arrow-down  { background-position: 0 -1*$iconWidth; }
+.icon--check       { background-position: 0 -2*$iconWidth; }
+.icon--cross       { background-position: 0 -3*$iconWidth; }
+.icon--arrow-left  { background-position: 0 -4*$iconWidth; }
+
+.icon--dark-gray {
+	&.icon--arrow-right { background-position: -1*$iconWidth 0; }
+	&.icon--arrow-down  { background-position: -1*$iconWidth -1*$iconWidth; }
+	&.icon--check       { background-position: -1*$iconWidth -2*$iconWidth; }
+	&.icon--cross       { background-position: -1*$iconWidth -3*$iconWidth; }
+	&.icon--arrow-left  { background-position: -1*$iconWidth -4*$iconWidth; }
+}
+
+.icon--light-blue {
+	&.icon--arrow-right { background-position: -2*$iconWidth 0; }
+	&.icon--arrow-down  { background-position: -2*$iconWidth -1*$iconWidth; }
+	&.icon--check       { background-position: -2*$iconWidth -2*$iconWidth; }
+	&.icon--cross       { background-position: -2*$iconWidth -3*$iconWidth; }
+	&.icon--arrow-left  { background-position: -2*$iconWidth -4*$iconWidth; }
+}
+
+.icon--orange {
+	&.icon--arrow-right { background-position: -3*$iconWidth 0; }
+	&.icon--arrow-down  { background-position: -3*$iconWidth -1*$iconWidth; }
+	&.icon--check       { background-position: -3*$iconWidth -2*$iconWidth; }
+	&.icon--cross       { background-position: -3*$iconWidth -3*$iconWidth; }
+	&.icon--arrow-left  { background-position: -3*$iconWidth -4*$iconWidth; }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lte-ie9 ie8"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lte-ie9 ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title><%= title %></title>
+        <meta name="keywords" content="<%= keywords %>">
+        <meta name="description" content="<%= description %>">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <% if @mode == 'edit' %>
+            <link rel="stylesheet" href="/templates/life_assist/css/blocks.css">
+        <% else %>
+            <%= render :region => 'publisher_templates/publish_mode/fonts' %>
+            <link rel="stylesheet" href="/templates/life_assist/css/all.css">
+            <script src="/templates/life_assist/js/libs/modernizr.custom.min.js"></script>
+            <!--[if IE 8]>
+                <script src="/templates/life_assist/js/libs/respond.min.js"></script>
+            <![endif]-->
+        <% end %>
+        <%= render :region => 'publisher_templates/publish_mode/uniting_skin' %>
+
+    </head>
+    <!--
+        life_assist
+        contact.page
+    -->
+    <body>
+
+        <% if @mode == 'edit' %>
+            <%= render :region => 'publisher_templates/edit_mode/contact' %>
+        <% else %>
+
+            <div id="container">
+
+                <div class="page-header">
+
+                    <%= include_site_widget('help_bar') %>
+
+
+                    <%= render :region => 'publisher_templates/shared/site_search' %>
+
+
+                    <%= render :navigation => "Main" , :template_name => 'publisher_templates/nav_templates/main.nav' %>
+
+                </div> <!-- .page-header -->
+
+
+                <%= render :region => 'publisher_templates/publish_mode/contact' %>
+
+
+                <%= include_site_widget('footer') %>
+
+
+                <div class="page-overlay"></div>
+
+            </div> <!-- #container -->
+
+        <% end %>
+
+
+        <% if @mode != 'edit' %>
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script>window.jQuery || document.write('<script src="/templates/life_assist/js/libs/jquery.min.js"><\/script>')</script>
+            <script src="/templates/life_assist/js/libs/jquery.validate.min.js"></script>
+            <script src="/templates/life_assist/js/build/site.js"></script>
+        <% end %>
+
+        <%= render :region => 'publisher_templates/publish_mode/uniting_pop_up' %>
+
+    </body>
+</html>

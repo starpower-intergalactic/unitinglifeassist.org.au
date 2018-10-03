@@ -1,0 +1,43 @@
+<div class="main-nav">
+    <div class="max-width-wrap clearfix">
+        
+        <a href="<%= @full_domain %>" class="nav-logo"><img src="/templates/life_assist/img/site/logo_life_assist.png" height="42" width="142" alt="lifeAssist"></a>
+        <button class="menu_toggle">
+            <span class="hamburger"></span>
+            MENU
+        </button>
+        <button class="start_search">
+            <span class="icon-search"></span>
+        </button>
+        <ul class="nav nav-lvl-1">
+            <% @top_level_items.each do |nav_item| %>
+                <%
+                    nav_item_link = '#'
+                    show_children = true
+
+                    if nav_item.navigable_type == "Page"
+                        nav_item_link = nav_item.url
+                        show_children = false
+                    elsif nav_item.navigable_type == "Folder"
+                        nav_item_link = nav_item.children.first.url unless nav_item.children.blank?
+                    else
+                        next
+                    end
+                %>
+                <li class="nav-lvl-1-item">
+                    <a href="<%= nav_item_link %>"><%= nav_item.name %></a>
+                    <% if show_children && !nav_item.children.empty? %>
+                        <div class="nav-lvl-2">
+                            <div class="nav-bg-panel"></div>
+                            <% nav_item.children.each do |sub_item| %>
+                                <% next if sub_item.navigable_type != "Page" %>
+                                <a href="<%= sub_item.url %>"><%= sub_item.name %></a>
+                            <% end %>
+                        </div>
+                    <% end %>
+                </li>
+            <% end %>
+        </ul>
+
+    </div> <!-- .max-width-wrap.clearfix -->
+</div><!-- .main-nav -->

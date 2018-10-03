@@ -1,0 +1,122 @@
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        // page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        // page-break-after: avoid;
+        float: none;
+        display: block; 
+        page-break-before: always; 
+    }
+
+    .page-break { display: block; page-break-before: always; }
+    
+    // for hiding link urls
+
+    a[href]:after {
+        content: "";
+    }
+
+    .page-header {
+        padding-bottom: 0!important;
+    }
+    .help-bar {
+        display: none;
+    }
+    .main-nav.sticky {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: auto;
+    }
+    .menu_toggle {
+        display: none;
+    }
+    .media-block .media-img img {
+        height: auto;
+    }
+    .media-block .media-img {
+        padding-bottom: 25%;
+    }
+    .contact-list a {
+        padding: 0;
+    }
+    .hero-gallery {
+        display: none;
+    }
+    .footer-links {
+        height: auto;
+        br {
+            display: none;
+        }
+    }
+    .footer-links > a {
+        display: none;
+    }
+    .slogan-img {
+        margin-top: -60px;
+    }
+}

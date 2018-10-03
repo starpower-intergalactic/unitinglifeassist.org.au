@@ -1,0 +1,200 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+body {
+    min-height: 50em;
+    font-family: $defaultFont;
+    position: relative;
+}
+
+html, body {
+    overflow-x: hidden;
+    color: white;
+    background-color: $colorDarkGray;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $headingFont;
+}
+
+
+.max-width-wrap {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1024px;
+}
+
+#container {
+    color: $colorDarkGray;
+    background-color: white;
+}
+
+@media screen and (min-width:64em){
+    #container {
+    }
+}
+
+.arrow {
+    color: currentColor;
+    display: inline-block;
+    width: 0.75em;
+    height: 0.75em;
+    position: relative;
+    border-top: 4px solid;
+
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        color: currentColor;
+        width: 4px;
+        height: 100%;
+        right: 0;
+        top: 0;
+        border-right: 4px solid;
+    }
+}
+
+.ie8 {
+    .arrow {
+        width: 18px;
+        height: 18px;
+        background-image: url(../img/site/icon_sprite_misc_1x.png);
+        background-repeat: no-repeat;
+        background-position: -18px 0;
+        border: 0;
+
+        &:after {
+            display: none;
+        }
+    }
+}
+
+.page-overlay {
+    /*display: none;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: black;
+    z-index: 12;
+    overflow: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s, height 0.33s;
+       -moz-transition: opacity 0.5s, height 0.33s;
+            transition: opacity 0.5s, height 0.33s;
+/*    -webkit-transition-delay: 0, 0.3s;
+       -moz-transition-delay: 0, 0.3s;
+            transition-delay: 0, 0.3s;*/
+
+    &.show {
+        height: 100%;
+        opacity: 0.75;
+/*        -webkit-transition-delay: 0, 0;
+           -moz-transition-delay: 0, 0;
+                transition-delay: 0, 0;*/
+    }
+    &.full {
+        z-index: 1000;
+    }
+}

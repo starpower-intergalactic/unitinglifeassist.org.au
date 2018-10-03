@@ -1,0 +1,137 @@
+.glossary-term {
+	position: relative;
+	cursor: pointer;
+
+	&:hover .glossary-tooltip {
+		display: block;
+	}
+}
+
+.glossary-tooltip {
+	display: none;
+	position: absolute;
+	color: white;
+	background-color: $colorBlue;
+	padding: 0.5em;
+	z-index: 9999;
+	text-align: left;
+	width: 220px;
+	box-shadow: 0 0 10px 0 black;
+	font-size: 13px;
+	line-height: 1.3em;
+
+	bottom: 100%;
+	left: 50%;
+	margin: 0 0 20px -110px;
+
+	a {
+		color: white;
+		font-size: 13px;
+		line-height: 1.3em;
+		text-transform: none;
+	}
+
+	&:after {
+		content: '';
+		width: 0;
+		height: 0;
+		border: 10px solid transparent;
+		border-color: $colorBlue transparent transparent transparent;
+		position: absolute;
+		top: 100%;
+		left: 50%;
+
+		margin: 0 0 0 -10px;
+	}
+
+	&.tooltip-sw {
+		top: 100%;
+		right: 0;
+		bottom: auto;
+		left: auto;
+		margin: 10px 0 0 0;
+
+		&:after {
+			border-color: transparent transparent $colorBlue transparent;
+			top: auto;
+			right: 5px;
+			bottom: 100%;
+			left: auto;
+		}
+	}
+
+	&.tooltip-se {
+		top: 100%;
+		right: auto;
+		bottom: auto;
+		left: 0;
+		margin: 10px 0 0 0;
+
+		&:after {
+			border-color: transparent transparent $colorBlue transparent;
+			top: auto;
+			right: auto;
+			bottom: 100%;
+			left: 10px;
+		}
+	}
+}
+
+
+
+
+
+
+#tooltip {
+    text-align: left;
+    color: #fff;
+    background: $colorBlue;
+    position: absolute;
+    z-index: 100;
+    padding: 0.5em;
+	box-shadow: 0 0 10px 0 black;
+	font-size: 13px;
+	line-height: 1.3em;
+
+    &:after {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid $colorBlue;
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        margin-left: -10px;
+    }
+
+    &.top:after {
+        border-top-color: transparent;
+        border-bottom: 10px solid #111;
+        top: -20px;
+        bottom: auto;
+    }
+
+    &.left:after {
+        left: 10px;
+        margin: 0;
+    }
+
+    &.right:after {
+        right: 10px;
+        left: auto;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    #tooltip:before {
+        content: 'x';
+        position: absolute;
+        color: #fff;
+        right: 8px;
+        top: 3px;
+        font-size: 12px;
+    }
+}

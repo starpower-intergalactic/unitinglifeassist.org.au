@@ -1,0 +1,79 @@
+/*
+	CONTACT LIST: HOTLINE, PHONE, FAX, EMAIL
+*/
+
+.contact-list {
+
+	a {
+		position: relative;
+		display: block;
+		font-size: 0.95em;
+		line-height: 2em;
+		min-height: 20px;
+		padding: 0 0 0 25px;
+		color: $colorDarkGray;
+		font-family: $headingFont;
+	}
+}
+.page-footer .contact-list a {
+	color: $brandColor;
+}
+
+.contact-icon {
+	position: absolute;
+	display: block;
+	width: 20px;
+	height: 20px;
+	top: 50%;
+	left: 0;
+	margin: -11px 0 0 0;
+	background-image: url(../img/site/icon_sprite_contact.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: 60px auto;
+}
+
+.contact-icon--hotline { background-position: 0px 0px; }
+.contact-icon--phone   { background-position: 0px -20px; }
+.contact-icon--fax     { background-position: 0px -40px; }
+.contact-icon--email   { background-position: 0px -60px; }
+
+@media screen and (min-width:64em){
+
+	.contact-list {
+		a {
+			font-size: 1.1em;
+			line-height: 2em;
+			min-height: 42px;
+			padding: 0 0 0 45px;
+		}
+	}
+
+	.contact-icon {
+		position: absolute;
+		display: block;
+		width: 40px;
+		height: 40px;
+		top: 50%;
+		left: 0;
+		margin: -22px 0 0 0;
+		background-image: url(../img/site/icon_sprite_contact.png);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-size: 60px auto;
+	}
+
+	.contact-icon--hotline { background-position: -20px 0px; }
+	.contact-icon--phone   { background-position: -20px -40px; }
+	.contact-icon--fax     { background-position: -20px -80px; }
+	.contact-icon--email   { background-position: -20px -120px; }
+
+	.no-backgroundsize {
+		.contact-icon--hotline { background-position: 0px 0px; }
+		.contact-icon--phone   { background-position: 0px -40px; }
+		.contact-icon--fax     { background-position: 0px -80px; }
+		.contact-icon--email   { background-position: 0px -120px; }
+	}
+}
+
+/* end : CONTACT LIST */

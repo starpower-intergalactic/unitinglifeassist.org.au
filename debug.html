@@ -1,0 +1,1215 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lte-ie9 ie8"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lte-ie9 ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <title>DEBUG</title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <style>
+    @font-face{
+    font-family:"Kettering 105";
+    font-weight: 100;
+    src:url("/templates/life_assist/fonts/b31665b4-88a4-4e8b-bb9c-df75b1d2594a.eot?#iefix");
+    src:url("/templates/life_assist/fonts/b31665b4-88a4-4e8b-bb9c-df75b1d2594a.eot?#iefix") format("eot"),url("/templates/life_assist/fonts/a126bc19-9680-4900-85d0-c98a1a902a95.woff") format("woff"),url("/templates/life_assist/fonts/bfd48c18-716d-4fc6-a026-42370655e7fa.ttf") format("truetype"),url("/templates/life_assist/fonts/cf852f88-5630-42bf-923c-9467cb489475.svg#cf852f88-5630-42bf-923c-9467cb489475") format("svg");
+    }
+    @font-face{
+    font-family:"Kettering 105";
+    font-weight: 400;
+    src:url("/templates/life_assist/fonts/5d0e7178-ffaa-4106-a75f-f55b3942cd3f.eot?#iefix");
+    src:url("/templates/life_assist/fonts/5d0e7178-ffaa-4106-a75f-f55b3942cd3f.eot?#iefix") format("eot"),url("/templates/life_assist/fonts/c9f28ccf-b57b-42f0-a9b2-069bc432d930.woff") format("woff"),url("/templates/life_assist/fonts/f7723f3e-ff79-45ac-9a45-4d161b9a7273.ttf") format("truetype"),url("/templates/life_assist/fonts/13adf849-0bc3-420d-83d5-d971600e34e6.svg#13adf849-0bc3-420d-83d5-d971600e34e6") format("svg");
+    }
+
+    @font-face{
+        font-family:"Proxima Nova";
+        font-weight: 400;
+        font-style: normal;
+    src:url("/templates/life_assist/fonts/7e90123f-e4a7-4689-b41f-6bcfe331c00a.eot?#iefix");
+    src:url("/templates/life_assist/fonts/7e90123f-e4a7-4689-b41f-6bcfe331c00a.eot?#iefix") format("eot"),url("/templates/life_assist/fonts/e56ecb6d-da41-4bd9-982d-2d295bec9ab0.woff") format("woff"),url("/templates/life_assist/fonts/2aff4f81-3e97-4a83-9e6c-45e33c024796.ttf") format("truetype"),url("/templates/life_assist/fonts/ab9cd062-380f-4b53-b1a7-c0bec7402235.svg#ab9cd062-380f-4b53-b1a7-c0bec7402235") format("svg");
+    }
+    @font-face{
+        font-family:"Proxima Nova";
+        font-weight: 400;
+        font-style: italic;
+    src:url("/templates/life_assist/fonts/bc15a635-a09b-40d1-a5c4-70310166177d.eot?#iefix");
+    src:url("/templates/life_assist/fonts/bc15a635-a09b-40d1-a5c4-70310166177d.eot?#iefix") format("eot"),url("/templates/life_assist/fonts/9c69c878-2255-4027-8632-ed3635cddf45.woff") format("woff"),url("/templates/life_assist/fonts/b7eb3871-e910-4522-9982-effb425a2714.ttf") format("truetype"),url("/templates/life_assist/fonts/a0d89860-20e5-4bc0-b6c5-eae8ae0ebbbf.svg#a0d89860-20e5-4bc0-b6c5-eae8ae0ebbbf") format("svg");
+    }
+
+    @font-face{
+        font-family:"Proxima Nova";
+        font-weight: 700;
+        font-style: normal;
+    src:url("/templates/life_assist/fonts/87e4b4fc-cdf1-450a-8bed-dd818cba908d.eot?#iefix");
+    src:url("/templates/life_assist/fonts/87e4b4fc-cdf1-450a-8bed-dd818cba908d.eot?#iefix") format("eot"),url("/templates/life_assist/fonts/70ae52ec-d89b-4c6a-9402-854ebe423c54.woff") format("woff"),url("/templates/life_assist/fonts/6a35571c-ea14-4dac-9ae1-0e7af0abeec8.ttf") format("truetype"),url("/templates/life_assist/fonts/ac2bdafc-d4a8-49d0-8a10-4e2f16bf7e3c.svg#ac2bdafc-d4a8-49d0-8a10-4e2f16bf7e3c") format("svg");
+    }
+    @font-face{
+        font-family:"Proxima Nova";
+        font-weight: 700;
+        font-style: italic;
+    src:url("/templates/life_assist/fonts/06ebb3e2-5f11-4e26-8736-0f7acb3c7743.eot?#iefix");
+    src:url("/templates/life_assist/fonts/06ebb3e2-5f11-4e26-8736-0f7acb3c7743.eot?#iefix") format("eot"),url("/templates/life_assist/fonts/d2a02f92-9826-4117-ae36-8fcfd72ad46e.woff") format("woff"),url("/templates/life_assist/fonts/d786d7d1-696a-47f9-9d03-7608fcb29cc4.ttf") format("truetype"),url("/templates/life_assist/fonts/e7fe23f1-b364-4a20-905a-86ed7e89efae.svg#e7fe23f1-b364-4a20-905a-86ed7e89efae") format("svg");
+    }
+</style>
+            <link rel="stylesheet" href="/templates/life_assist/css/all.css">
+            <script src="/templates/life_assist/js/libs/modernizr.custom.min.js"></script>
+            <!--[if IE 8]>
+                <script src="/templates/life_assist/js/libs/respond.min.js"></script>
+            <![endif]-->
+        
+                <script type="text/javascript">
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-51700622-1');
+                ga('send', 'pageview');
+            </script>
+<script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script></head>
+    <!--
+        life_assist
+        contact.page
+    -->
+    <body>
+
+            
+            <div id="container">
+
+                <div class="page-header">
+
+                    
+    <div class="help-bar">
+        <div class="max-width-wrap">
+            <a href="http://www.lifeassist.org.au/contact-v1">I need assistance <span>now</span></a>
+                <div class="font-size-help glossary-term">
+                    A+
+                    <div class="glossary-tooltip tooltip-sw">
+                        <a href="#">Use your browser's zoom features to adjust the font size to your needs.</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+
+
+                    
+                    
+                    <div class="search-box">
+    <div class="max-width-wrap">
+
+        <form action="#" class="form search-form">
+            <input type="text" name="term" placeholder="search lifeAssist">
+            <button type="submit" class="">
+                <span class="btn-state-default">SEARCH</span>
+                <img src="/templates/life_assist/img/site/icon_loader_blue.gif" height="16" width="16" class="btn-state-sending">
+            </button>
+        </form>
+        <div class="search-result-list"></div> <!-- .search-result-list -->
+
+    </div> <!-- .max-width-wrap -->
+</div> <!-- .search-box -->
+
+
+                    <div class="main-nav">
+    <div class="max-width-wrap clearfix">
+        
+        <a href="http://www.lifeassist.org.au" class="nav-logo"><img src="/templates/life_assist/img/site/logo_life_assist.png" height="42" width="142" alt="lifeAssist"></a>
+        <button class="menu_toggle">
+            <span class="hamburger"></span>
+            MENU
+        </button>
+        <button class="start_search">
+            <span class="icon-search"></span>
+        </button>
+        <ul class="nav nav-lvl-1">
+                <li class="nav-lvl-1-item">
+                    <a href="http://www.lifeassist.org.au/options-selector">About You</a>
+                        <div class="nav-lvl-2">
+                            <div class="nav-bg-panel"></div>
+                                <a href="http://www.lifeassist.org.au/options-selector">Find the best options for you</a>
+                        </div>
+                </li>
+                <li class="nav-lvl-1-item">
+                    <a href="http://www.lifeassist.org.au/about-lifeassist">About Us</a>
+                        <div class="nav-lvl-2">
+                            <div class="nav-bg-panel"></div>
+                                <a href="http://www.lifeassist.org.au/about-lifeassist">About lifeAssist</a>
+                                <a href="http://www.lifeassist.org.au/vision">Our Vision &amp; Mission</a>
+                                <a href="http://www.lifeassist.org.au/board-of-governance">Board of Governance</a>
+                                <a href="http://www.lifeassist.org.au/senior-management">Senior Management</a>
+                                <a href="http://www.lifeassist.org.au/client-stories">Client Stories</a>
+                        </div>
+                </li>
+                <li class="nav-lvl-1-item">
+                    <a href="http://www.lifeassist.org.au/positive-ageing">How We Assist</a>
+                        <div class="nav-lvl-2">
+                            <div class="nav-bg-panel"></div>
+                                <a href="http://www.lifeassist.org.au/positive-ageing">Positive Ageing</a>
+                                <a href="http://www.lifeassist.org.au/disability-solutions">Disability Solutions</a>
+                                <a href="http://www.lifeassist.org.au/carer-wellbeing">Carer Wellbeing</a>
+                                <a href="http://www.lifeassist.org.au/mylifeassist">mylifeAssist</a>
+                        </div>
+                </li>
+                <li class="nav-lvl-1-item">
+                    <a href="http://www.lifeassist.org.au/linkassist-online-community-noticeboard">Other Services</a>
+                        <div class="nav-lvl-2">
+                            <div class="nav-bg-panel"></div>
+                                <a href="http://www.lifeassist.org.au/linkassist-online-community-noticeboard">linkAssist online community noticeboard</a>
+                                <a href="http://www.lifeassist.org.au/research">Research</a>
+                                <a href="http://www.lifeassist.org.au/advocacy">Advocacy</a>
+                                <a href="http://www.lifeassist.org.au/pastoral-care">Pastoral care</a>
+                        </div>
+                </li>
+                <li class="nav-lvl-1-item">
+                    <a href="http://www.lifeassist.org.au/donate">Get Involved</a>
+                        <div class="nav-lvl-2">
+                            <div class="nav-bg-panel"></div>
+                                <a href="http://www.lifeassist.org.au/donate">Donate</a>
+                                <a href="http://www.lifeassist.org.au/client-committee">Client Committee</a>
+                                <a href="http://www.lifeassist.org.au/working-at-lifeassist">Working at lifeAssist</a>
+                        </div>
+                </li>
+                <li class="nav-lvl-1-item">
+                    <a href="http://www.lifeassist.org.au/news">News</a>
+                        <div class="nav-lvl-2">
+                            <div class="nav-bg-panel"></div>
+                                <a href="http://www.lifeassist.org.au/news">News</a>
+                                <a href="http://www.lifeassist.org.au/events">Events</a>
+                                <a href="http://www.lifeassist.org.au/the-bugle">The Bugle</a>
+                                <a href="http://www.lifeassist.org.au/helpful-links">Helpful Links</a>
+                        </div>
+                </li>
+                <li class="nav-lvl-1-item">
+                    <a href="http://www.lifeassist.org.au/contact">Contact</a>
+                        <div class="nav-lvl-2">
+                            <div class="nav-bg-panel"></div>
+                                <a href="http://www.lifeassist.org.au/contact">Contact lifeAssist</a>
+                                <a href="http://www.lifeassist.org.au/feedback-and-complaint-form">Client Feedback</a>
+                                <a href="http://www.lifeassist.org.au/enews-sign-up">eNews Sign up</a>
+                        </div>
+                </li>
+        </ul>
+
+    </div> <!-- .max-width-wrap.clearfix -->
+</div><!-- .main-nav -->
+                    
+                </div> <!-- .page-header -->
+
+
+                <div class="page-content">
+    
+
+    <h1 class="page-heading">
+        I Need Assistance Now
+    </h1>
+
+
+    <div class="column-layout">
+        <div class="max-width-wrap">
+            
+            <div class="column column-1">
+
+
+
+                <div class="padded-content">
+                    
+                    <div class="contact-list">
+                        <a href="tel:1300 277 478">
+                            <span class="contact-icon contact-icon--hotline"></span>
+                            1300 ASSIST (1300 277 478)
+                        </a>
+                        <a href="tel:03 9239 2500">
+                            <span class="contact-icon contact-icon--phone"></span>
+                            03 9239 2500
+                        </a>
+                        <a href="tel:03 9239 2522">
+                            <span class="contact-icon contact-icon--fax"></span>
+                            03 9239 2522
+                        </a>
+                        <a href="mailto:info@lifeassist.org.au">
+                            <span class="contact-icon contact-icon--email"></span>
+                            info@lifeassist.org.au
+                        </a>
+                    </div>
+
+                    <p><strong>If you need assistance, please call or email<br /></strong>We provide help to people in Melbourne's eastern suburbs, northern suburbs, or the&nbsp;<a href="http://www.lifeassist.org.au/lifeassist-barwon-region">NDIS Barwon Region</a>.&nbsp;<a href="http://www.lifeassist.org.au/mylifeassist">mylifeAssist</a>&nbsp;can provide self-funded assistance in metropolitan Melbourne, Mornington Peninsular and some regional Victorian locations.</p>
+<p><strong>Head Office:<br /></strong>Ground Floor, Building 5<br />Brandon Business Park<br />530-540 Springvale Road<br />Glen Waverley Vic 3150</p>
+<p><strong>Postal Address:<br /></strong>P.O. Box 5267<br />Brandon Park &nbsp;Vic &nbsp;3150</p>
+<p><strong>For enquiries regarding&nbsp;<a href="http://www.lifeassist.org.au/lifeassist-crcc">Commonwealth Respite &amp; Carelink Centre</a>&nbsp;(CRCC) &nbsp;call&nbsp;1800 052 222. If using a mobile, or calling from outside the eastern metropolitan region, phone (03) 9239 2500</strong></p>
+<div><strong><br />Interpreters Available : &nbsp;131 450</strong></div>
+
+                </div>
+                
+                
+                
+
+            </div> <!-- .column-1 -->
+
+            <div class="column column-2">
+                
+                <div class="padded-content">
+
+                    <form action="#" class="form max-width-wrap contact-form" data-ajax="no" method="POST" enctype="multipart/form-data">
+                        <div class="form_action hidden">http://lifeassist.blockshome.com/forms/m2hvYaPaOybW4gA</div>
+                        <div style="display:none;">
+                            <select name="life_assist[target_email]">
+                                <option selected>help@lifeassist.org.au</option>
+                                <option>referrals@lifeassist.org.au</option>
+                            </select>
+                        </div>
+                        <input type="hidden" name="interests[]" value="2">
+
+                        <div class="form-row clearfix">
+                            <h2 class="form-row-heading">Your Details</h2>
+                        </div>
+
+                        <div class="form-row clearfix">
+                            <div class="form-item">
+                                <label>Title*</label>
+                                <div class="fake-select">
+                                    <div class="select-val">Please select</div>
+                                    <div class="fake-toggle">
+                                        <div class="icon icon--arrow-down icon--dark-gray"></div>
+                                    </div>
+                                    <select name="title" class="required">
+                                        <option value="">Please select</option>
+                                        <option value="Miss">Miss</option>
+                                        <option value="Mr">Mr.</option>
+                                        <option value="Mrs">Mrs.</option>
+                                        <option value="Ms">Ms.</option>
+                                        <option value="Dr">Dr.</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-item form-item-comment">
+                                <em>* Mandatory Fields</em>
+                            </div>
+                        </div>
+
+                        <div class="form-row clearfix">
+                            <div class="form-item">
+                                <label>First Name*</label>
+                                <input type="text" class="text-input required" name="first_name">
+                            </div>
+                            <div class="form-item">
+                                <label>Last Name*</label>
+                                <input type="text" class="text-input required" name="last_name">
+                            </div>
+                        </div> <!-- .form-row clearfix -->
+
+                        <div class="form-row clearfix">
+                            <div class="form-item">
+                                <label>Phone*</label>
+                                <input type="text" class="text-input required" name="home_phone">
+                            </div>
+                            <div class="form-item">
+                                <label>Phone Other</label>
+                                <input type="text" class="text-input" name="mobile">
+                            </div>
+                        </div> <!-- .form-row clearfix -->
+
+                        <div class="form-row clearfix">
+                            <div class="form-item">
+                                <label>Email</label>
+                                <input type="text" class="text-input email" name="email">
+                            </div>
+                            <div class="form-item">
+                                <label>Preferred Method of Contact*</label>
+                                <div class="fake-select">
+                                    <div class="select-val">Please select</div>
+                                    <div class="fake-toggle">
+                                        <div class="icon icon--arrow-down icon--dark-gray"></div>
+                                    </div>
+                                    <select name="life_assist[method_of_contact]" class="required js-method-of-contact" data-target="js-interpreter-form-row">
+                                        <option value="">Please select</option>
+                                        <option value="phone">Phone</option>
+                                        <option value="email">Email</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div> <!-- .form-row clearfix -->
+
+                        <div class="form-row form-row--hidden clearfix js-interpreter-form-row">
+                            <div class="form-item">
+                                <label>Will an interpreter be required?</label>
+                                <div class="fake-select">
+                                    <div class="select-val">No</div>
+                                    <div class="fake-toggle">
+                                        <div class="icon icon--arrow-down icon--dark-gray"></div>
+                                    </div>
+                                    <select name="life_assist[personal_interpreter]" class="js-interpreter">
+                                        <option value="no" selected>No</option>
+                                        <option value="yes">Yes</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-item disabled">
+                                <label>Language</label>
+                                <input type="text" class="text-input js-language" name="life_assist[personal_interpreter_language]" disabled>
+                            </div>
+                        </div> <!-- .form-row clearfix -->
+
+                        <div class="form-row clearfix">
+                            <div class="form-item">
+                                <label>Suburb*</label>
+                                <input type="text" class="text-input required js-suburb-suggest" name="suburb" data-state-select="js-state-1">
+                            </div>
+                            <div class="form-item">
+                                <label>State*</label>
+                                <div class="fake-select">
+                                    <div class="select-val">Please select</div>
+                                    <div class="fake-toggle">
+                                        <div class="icon icon--arrow-down icon--dark-gray"></div>
+                                    </div>
+                                    <select name="state" class="required" id="js-state-1">
+                                        <option value="">Please select</option>
+                                        <option value="ACT">ACT</option>
+                                        <option value="NSW">NSW</option>
+                                        <option value="NT">NT</option>
+                                        <option value="QLD">QLD</option>
+                                        <option value="SA">SA</option>
+                                        <option value="TAS">TAS</option>
+                                        <option value="VIC">VIC</option>
+                                        <option value="WA">WA</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div> <!-- .form-row clearfix -->
+
+                        <div class="form-row clearfix">
+                            <div class="form-item form-item--full">
+                                <label>When will services be required</label>
+                                <div class="fake-select">
+                                    <div class="select-val">Please select</div>
+                                    <div class="fake-toggle">
+                                        <div class="icon icon--arrow-down icon--dark-gray"></div>
+                                    </div>
+                                    <select name="life_assist[services_start]" class="">
+                                        <option value="">Please select</option>
+                                        <option value="within next month">Within the next month</option>
+                                        <option value="within next week">Within in the next week</option>
+                                        <option value="asap">As soon as possible</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div> <!-- .form-row clearfix -->
+
+                        <div class="form-row clearfix">
+                            <div class="form-item form-item--full">
+                                <label>This enquiry is in reference to:</label>
+                            </div>
+                        </div> <!-- .form-row clearfix -->
+
+                        <div class="form-row clearfix">
+                            <div class="form-item variable">
+                                <label class="radio" for="enquiry_reference_1">
+                                    <input type="radio" class="required js--enquiry_reference" name="life_assist[enquiry_reference]" id="enquiry_reference_1" checked value="myself">
+                                    <div class="fake-radio"></div>
+                                    Myself
+                                </label>
+                            </div>
+                            <div class="form-item variable">
+                                <label class="radio" for="enquiry_reference_2">
+                                    <input type="radio" class="required js--enquiry_reference" name="life_assist[enquiry_reference]" id="enquiry_reference_2" value="friend/family member">
+                                    <div class="fake-radio"></div>
+                                    A friend/family member
+                                </label>
+                            </div>
+                            <div class="form-item variable">
+                                <label class="radio" for="enquiry_reference_3">
+                                    <input type="radio" class="required js--enquiry_reference" name="life_assist[enquiry_reference]" id="enquiry_reference_3" value="client/patient">
+                                    <div class="fake-radio"></div>
+                                    A client/patient
+                                </label>
+                            </div>
+                        </div> <!-- .form-row clearfix -->
+
+
+                        <!-- EXTRA FIELDS :: FRIEND OR FAMILY -->
+                        <div class="extra-form-fields friend">
+
+                            <div class="form-row clearfix">
+                                <h2 class="form-row-heading">Friend/Family Member's Details</h2>
+                            </div>
+                            
+                            <div class="form-row clearfix">
+                                <div class="form-item form-item--full">
+                                    <label>The details of the person who needs assistance (if you are enquiring on behalf of someone else):</label>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item">
+                                    <label>Name</label>
+                                    <input type="text" class="text-input" name="life_assist[family_name]">
+                                </div>
+                                <div class="form-item">
+                                    <label>Relationship</label>
+                                    <input type="text" class="text-input" name="life_assist[family_relationship]">
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item">
+                                    <label>Suburb</label>
+                                    <input type="text" class="text-input" name="life_assist[family_suburb]">
+                                </div>
+                                <div class="form-item">
+                                    <label>State</label>
+                                    <div class="fake-select">
+                                        <div class="select-val">Please select</div>
+                                        <div class="fake-toggle">
+                                            <div class="icon icon--arrow-down icon--dark-gray"></div>
+                                        </div>
+                                        <select name="life_assist[family_state]" class="">
+                                            <option value="">Please select</option>
+                                            <option value="ACT">ACT</option>
+                                            <option value="NSW">NSW</option>
+                                            <option value="NT">NT</option>
+                                            <option value="QLD">QLD</option>
+                                            <option value="SA">SA</option>
+                                            <option value="TAS">TAS</option>
+                                            <option value="VIC">VIC</option>
+                                            <option value="WA">WA</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item">
+                                    <label>Phone</label>
+                                    <input type="text" class="text-input" name="life_assist[family_phone]">
+                                </div>
+                                <div class="form-item">
+                                    <label>Email</label>
+                                    <input type="text" class="text-input email" name="life_assist[family_email]">
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item">
+                                    <label>Preferred Method of Contact</label>
+                                    <div class="fake-select">
+                                        <div class="select-val">Please select</div>
+                                        <div class="fake-toggle">
+                                            <div class="icon icon--arrow-down icon--dark-gray"></div>
+                                        </div>
+                                        <select name="life_assist[family_method_of_contact]" class="">
+                                            <option value="">Please select</option>
+                                            <option value="phone">Phone</option>
+                                            <option value="email">Email</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item form-item--full">
+                                    <label>Who should <srong>lifeAssist</srong> contact?</label>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item variable">
+                                    <label class="radio" for="family_who_to_contact_1">
+                                        <input type="radio" class="required" name="life_assist[family_who_to_contact]" id="family_who_to_contact_1" checked value="person enquiring">
+                                        <div class="fake-radio"></div>
+                                        You
+                                    </label>
+                                </div>
+                                <div class="form-item variable">
+                                    <label class="radio" for="family_who_to_contact_2">
+                                        <input type="radio" class="required" name="life_assist[family_who_to_contact]" id="family_who_to_contact_2" value="person requiring assistance">
+                                        <div class="fake-radio"></div>
+                                        The person requiring assistance
+                                    </label>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item">
+                                    <label>Will an interpreter be required?</label>
+                                    <div class="fake-select">
+                                        <div class="select-val">No</div>
+                                        <div class="fake-toggle">
+                                            <div class="icon icon--arrow-down icon--dark-gray"></div>
+                                        </div>
+                                        <select name="life_assist[family_interpreter]" class="js-interpreter">
+                                            <option value="no" selected>No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-item disabled">
+                                    <label>Language</label>
+                                    <input type="text" class="text-input js-language" name="life_assist[family_interpreter_language]" disabled>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <h3 class="form-row-heading">
+                                    Please ensure you have the person's consent to share this information with lifeAssist and permission for lifeAssist to contact them.
+                                </h3>
+                            </div>
+
+                            <div class="form-row clearfix">
+                                <div class="form-item form-item--checkbox form-item--checkbox-left form-item--full">
+                                    <label>
+                                        <span class="fake-checkbox">
+                                            <input type="checkbox" name="life_assist[family_consent]" value="yes" class="required">
+                                            <span class="icon icon--check icon--dark-gray"></span>
+                                        </span>
+                                        <strong>YES</strong>, I have permission to provide the above personal details and give/have gained consent for lifeAssist to make contact regarding the above information.
+                                    </label>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                        </div> <!-- extra form fields -->
+
+
+                        <!-- EXTRA FIELDS :: CLIENT OR PATIENT -->
+                        <div class="extra-form-fields patient">
+
+                            <div class="form-row clearfix">
+                                <h2 class="form-row-heading">Client/Patient's Details</h2>
+                            </div>
+
+                            <div class="form-row clearfix">
+                                <div class="form-item">
+                                    <label>Your Relationship to the Client/Patient</label>
+                                    <input type="text" class="text-input" name="life_assist[patient_relationship]">
+                                </div>
+                                <div class="form-item">
+                                    <label>Hospital Discharge Date</label>
+                                    <input type="text" class="text-input" name="life_assist[patient_discharge_date]" placeholder="dd/mm/yyyy">
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item form-item--full">
+                                    <label>Clinical Diagnosis (list if multiple)</label>
+                                    <textarea name="life_assist[patient_diagnosis]" cols="30" rows="10" class="text-input"></textarea>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item form-item--full">
+                                    <h4>Formal Supports</h4>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item variable">
+                                    <label class="radio" for="patient_formal_supports_1">
+                                        <input type="radio" class="" name="life_assist[patient_formal_supports]" id="patient_formal_supports_1" value="yes">
+                                        <div class="fake-radio"></div>
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="form-item variable">
+                                    <label class="radio" for="patient_formal_supports_2">
+                                        <input type="radio" class="" name="life_assist[patient_formal_supports]" id="patient_formal_supports_2" value="no">
+                                        <div class="fake-radio"></div>
+                                        No
+                                    </label>
+                                </div>
+                                <div class="form-item variable">
+                                    <label class="radio" for="patient_formal_supports_3">
+                                        <input type="radio" class="" name="life_assist[patient_formal_supports]" id="patient_formal_supports_3" value="none reported">
+                                        <div class="fake-radio"></div>
+                                        None Reported
+                                    </label>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item form-item--full">
+                                    <label>Details</label>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item">
+                                    <label>Case Manager/Agency</label>
+                                    <input type="text" class="text-input" name="life_assist[patient_formal_support_case_manager]">
+                                </div>
+                                <div class="form-item">
+                                    <label>Contact</label>
+                                    <input type="text" class="text-input" name="life_assist[patient_formal_support_contact]">
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item form-item--full">
+                                    <label>Type</label>
+                                    <input type="text" class="text-input" name="life_assist[patient_formal_support_type]">
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+
+                            <div class="form-row clearfix">
+                                <div class="form-item form-item--full">
+                                    <h4>Known Carers (Informal Support)</h4>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item variable">
+                                    <label class="radio" for="patinformal1">
+                                        <input type="radio" class="" name="life_assist[patient_informal_support]" id="patinformal1" value="yes">
+                                        <div class="fake-radio"></div>
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="form-item variable">
+                                    <label class="radio" for="patinformal2">
+                                        <input type="radio" class="" name="life_assist[patient_informal_support]" id="patinformal2" value="no">
+                                        <div class="fake-radio"></div>
+                                        No
+                                    </label>
+                                </div>
+                                <div class="form-item variable">
+                                    <label class="radio" for="patinformal3">
+                                        <input type="radio" class="" name="life_assist[patient_informal_support]" id="patinformal3" value="none reported">
+                                        <div class="fake-radio"></div>
+                                        None Reported
+                                    </label>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item form-item--full">
+                                    <label>Details</label>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item">
+                                    <label>Name/Relationship</label>
+                                    <input type="text" class="text-input" name="life_assist[patient_informal_support_name]">
+                                </div>
+                                <div class="form-item">
+                                    <label>Contact</label>
+                                    <input type="text" class="text-input" name="life_assist[patient_informal_support_contact]">
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-row clearfix">
+                                    <div class="form-item form-item--full">
+                                        <label>Service Type</label>
+                                        <input type="text" class="text-input" name="life_assist[patient_informal_support_type]">
+                                    </div>
+                                </div> <!-- .form-row clearfix -->
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item form-item--full">
+                                    <h3>Client/Patient details</h3>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item form-item--full">
+                                    <label>Name</label>
+                                    <input type="text" class="text-input" name="life_assist[patient_name]">
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item">
+                                    <label>Suburb of Residence</label>
+                                    <input type="text" class="text-input" name="life_assist[patient_suburb]">
+                                </div>
+                                <div class="form-item">
+                                    <label>State of Residence</label>
+                                    <div class="fake-select">
+                                        <div class="select-val">Please select</div>
+                                        <div class="fake-toggle">
+                                            <div class="icon icon--arrow-down icon--dark-gray"></div>
+                                        </div>
+                                        <select name="life_assist[patient_state]" class="">
+                                            <option value="">Please select</option>
+                                            <option value="ACT">ACT</option>
+                                            <option value="NSW">NSW</option>
+                                            <option value="NT">NT</option>
+                                            <option value="QLD">QLD</option>
+                                            <option value="SA">SA</option>
+                                            <option value="TAS">TAS</option>
+                                            <option value="VIC">VIC</option>
+                                            <option value="WA">WA</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item">
+                                    <label>Phone</label>
+                                    <input type="text" class="text-input" name="life_assist[patient_phone]">
+                                </div>
+                                <div class="form-item">
+                                    <label>Email</label>
+                                    <input type="text" class="text-input email" name="life_assist[patient_email]">
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item">
+                                    <label>Their Preferred Method of Contact</label>
+                                    <div class="fake-select">
+                                        <div class="select-val">Please select</div>
+                                        <div class="fake-toggle">
+                                            <div class="icon icon--arrow-down icon--dark-gray"></div>
+                                        </div>
+                                        <select name="life_assist[patient_method_of_contact]" class="">
+                                            <option value="">Please select</option>
+                                            <option value="phone">Phone</option>
+                                            <option value="email">Email</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item form-item--full">
+                                    <label>Who should <srong>lifeAssist</srong> contact?</label>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item variable">
+                                    <label class="radio" for="pat_who_to_contact1">
+                                        <input type="radio" class="required" name="life_assist[patient_who_to_contact]" id="pat_who_to_contact1" checked value="person enquiring">
+                                        <div class="fake-radio"></div>
+                                        You
+                                    </label>
+                                </div>
+                                <div class="form-item variable">
+                                    <label class="radio" for="pat_who_to_contact2">
+                                        <input type="radio" class="required" name="life_assist[patient_who_to_contact]" id="pat_who_to_contact2" value="patient/client">
+                                        <div class="fake-radio"></div>
+                                        The patient/client
+                                    </label>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item">
+                                    <label>Will an interpreter be required?</label>
+                                    <div class="fake-select">
+                                        <div class="select-val">No</div>
+                                        <div class="fake-toggle">
+                                            <div class="icon icon--arrow-down icon--dark-gray"></div>
+                                        </div>
+                                        <select name="life_assist[patient_interpreter]" class="js-interpreter">
+                                            <option value="no" selected>No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-item disabled">
+                                    <label>Language</label>
+                                    <input type="text" class="text-input js-language" name="life_assist[patient_interpreter_language]" disabled>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item form-item--full">
+                                    <h4>Document Upload</h4>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item form-item--full">
+                                    <label>Please attach any supporting documentation (PDF or Word DOC format only)</label>
+                                    <input type="file" name="uploads" data-accept="application/pdf,msword,vnd.openxmlformats-officedocument.wordprocessingml.document">
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+
+                            <div class="form-row clearfix">
+                                <h3 class="form-row-heading">
+                                    Please ensure you have the person's consent to share this information with lifeAssist and permission for lifeAssist to contact them.
+                                </h3>
+                            </div>
+
+                            <div class="form-row clearfix">
+                                <div class="form-item form-item--checkbox form-item--checkbox-left form-item--full">
+                                    <label>
+                                        <span class="fake-checkbox">
+                                            <input type="checkbox" name="life_assist[patient_consent]" value="yes" class="required">
+                                            <span class="icon icon--check icon--dark-gray"></span>
+                                        </span>
+                                        <strong>YES</strong>, I have discussed with the consumer how and why certain information may be shared with other service providers. I am satisfied that this has been understood and that informed consent for the information to be shared as detailed has been given.
+                                    </label>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                            <div class="form-row clearfix">
+                                <div class="form-item form-item--full">
+                                    <label></label>
+                                </div>
+                            </div> <!-- .form-row clearfix -->
+
+                        </div> <!-- .extra-form-fields -->
+
+
+
+                        <div class="form-row clearfix">
+                            <div class="form-item form-item--full">
+                                <label>Do you identify as any of the following:</label>
+                                <div class="fake-select">
+                                    <div class="select-val">Please select</div>
+                                    <div class="fake-toggle">
+                                        <div class="icon icon--arrow-down icon--dark-gray"></div>
+                                    </div>
+                                    <select name="life_assist[identify_as]" class="">
+                                        <option value="">Please select</option>
+                                        <option value="Culturally or linguistically diverse community">Culturally or linguistically diverse community</option>
+                                        <option value="Aboriginal or Torres Strait Islander">Aboriginal or Torres Strait Islander</option>
+                                        <option value="GLBTIQ community member">GLBTIQ community member</option>
+                                        <option value="homeless ">homeless </option>
+                                        <option value="survivor of family violence">survivor of family violence</option>
+                                        <option value="financially disadvantaged">financially disadvantaged</option>
+                                        <option value="Rather not say">Rather not say</option>
+                                        <option value="yes, but prefer to disclose verbally">yes, but prefer to disclose verbally</option>
+                                        <option value="none of the above">none of the above</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div> <!-- .form-row clearfix -->
+
+
+                        <div class="form-row clearfix">
+                            <div class="form-item form-item--full">
+                                <label>Comments</label>
+                                <textarea name="life_assist[msg_comments]" cols="30" rows="10" class="text-input"></textarea>
+                            </div>
+                        </div> <!-- .form-row clearfix -->
+
+                        <div class="form-row form-row-submit clearfix">
+
+                            <div class="form-item form-item--checkbox form-item--smaller">
+                                <label>
+                                    I have read the lifeAssist privacy policy*
+                                    <span class="fake-checkbox">
+                                        <input type="checkbox" name="terms" value="yes" class="required">
+                                        <span class="icon icon--check icon--dark-gray"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            
+                            <div class="form-item form-item--smallprint">
+                                <div class="smallprint">
+                                    <p>UnitingCare lifeAssist treats all client information with the utmost care and confidentiality.</p>
+                                    <ul>
+                                    <li>Download our FULL PRIVACY POLICY&nbsp;<a title="lifeAssist Privacy Policy" target="_blank">&nbsp;</a><a title="" href="http://lifeassist2.blocksassets.com/assets/lifeassist/lifeassist-site/fwlTN1pUSnFWHoV/01-Privacy-Policy-10-06-14-1-.pdf" target="_blank">here</a></li>
+                                    <li>Download the EASY ENGLISH PRIVACY POLICY&nbsp;<a title="Easy English Privacy Policy" href="http://lifeassist1.blocksassets.com/assets/lifeassist/lifeassist-site/HAQtPf6hAtlvZQS/05-Easy-English-Access-Amend-Pers-Info-30-06-14-1-.pdf" target="_blank">&nbsp;here</a>.</li>
+                                    <li>Download our PRIVACY COMPLAINTS POLICY&nbsp;<a title="Privacy Complaints Policy" href="http://lifeassist1.blocksassets.com/assets/lifeassist/lifeassist-site/diBeJEPzfukbgfn/02-Privacy-Complaint-Policy-10-06-14-1-.pdf" target="_blank">&nbsp;here</a>.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> <!-- .form-row clearfix -->
+
+                        <div class="form-row form-row-submit clearfix">
+
+                            <div class="form-item form-item-action form-item--left">
+                                <button class="btn btn--orange" type="submit">
+                                    <span class="btn-state-default">SUBMIT YOUR DETAILS</span>
+                                    <span class="btn-state-sending"><img src="/templates/life_assist/img/site/icon_loader_orange.gif" width="16" height="16" alt=""></span>
+                                </button>
+                            </div>
+                        </div> <!-- .form-row clearfix -->
+
+                        <div class="form-thank-you-wrap">
+                            <div class="form-thank-you">
+                                Thank you for your message.<br>We will be in touch with you shortly.
+                            </div>
+                        </div>
+
+                    </form> <!-- .form -->
+
+                    
+                </div>
+
+            </div> <!-- .column-2 -->
+
+        </div>
+    </div> <!-- .column-layout -->
+
+
+</div> <!-- .page-content -->
+
+
+                
+    <div class="page-footer">
+
+        <div class="page-sitemap-wrap">
+    <div class="page-sitemap max-width-wrap clearfix">
+
+            <div class="sitemap-item sitemap-item-1">
+                <a href="http://www.lifeassist.org.au/options-selector" class="sitemap-top-link">About You</a>
+                        <a href="http://www.lifeassist.org.au/options-selector">Find the best options for you</a>
+            </div>
+            <div class="sitemap-item sitemap-item-2">
+                <a href="http://www.lifeassist.org.au/about-lifeassist" class="sitemap-top-link">About Us</a>
+                        <a href="http://www.lifeassist.org.au/about-lifeassist">About lifeAssist</a>
+                        <a href="http://www.lifeassist.org.au/vision">Our Vision &amp; Mission</a>
+                        <a href="http://www.lifeassist.org.au/board-of-governance">Board of Governance</a>
+                        <a href="http://www.lifeassist.org.au/senior-management">Senior Management</a>
+                        <a href="http://www.lifeassist.org.au/client-stories">Client Stories</a>
+            </div>
+            <div class="sitemap-item sitemap-item-3">
+                <a href="http://www.lifeassist.org.au/positive-ageing" class="sitemap-top-link">How We Assist</a>
+                        <a href="http://www.lifeassist.org.au/positive-ageing">Positive Ageing</a>
+                        <a href="http://www.lifeassist.org.au/disability-solutions">Disability Solutions</a>
+                        <a href="http://www.lifeassist.org.au/carer-wellbeing">Carer Wellbeing</a>
+                        <a href="http://www.lifeassist.org.au/mylifeassist">mylifeAssist</a>
+            </div>
+            <div class="sitemap-item sitemap-item-4">
+                <a href="http://www.lifeassist.org.au/linkassist-online-community-noticeboard" class="sitemap-top-link">Other Services</a>
+                        <a href="http://www.lifeassist.org.au/linkassist-online-community-noticeboard">linkAssist online community noticeboard</a>
+                        <a href="http://www.lifeassist.org.au/research">Research</a>
+                        <a href="http://www.lifeassist.org.au/advocacy">Advocacy</a>
+                        <a href="http://www.lifeassist.org.au/pastoral-care">Pastoral care</a>
+            </div>
+            <div class="sitemap-item sitemap-item-5">
+                <a href="http://www.lifeassist.org.au/donate" class="sitemap-top-link">Get Involved</a>
+                        <a href="http://www.lifeassist.org.au/donate">Donate</a>
+                        <a href="http://www.lifeassist.org.au/client-committee">Client Committee</a>
+                        <a href="http://www.lifeassist.org.au/working-at-lifeassist">Working at lifeAssist</a>
+            </div>
+            <div class="sitemap-item sitemap-item-6">
+                <a href="http://www.lifeassist.org.au/news" class="sitemap-top-link">News</a>
+                        <a href="http://www.lifeassist.org.au/news">News</a>
+                        <a href="http://www.lifeassist.org.au/events">Events</a>
+                        <a href="http://www.lifeassist.org.au/the-bugle">The Bugle</a>
+                        <a href="http://www.lifeassist.org.au/helpful-links">Helpful Links</a>
+            </div>
+            <div class="sitemap-item sitemap-item-7">
+                <a href="http://www.lifeassist.org.au/contact" class="sitemap-top-link">Contact</a>
+                        <a href="http://www.lifeassist.org.au/contact">Contact lifeAssist</a>
+                        <a href="http://www.lifeassist.org.au/feedback-and-complaint-form">Client Feedback</a>
+                        <a href="http://www.lifeassist.org.au/enews-sign-up">eNews Sign up</a>
+            </div>
+
+    </div>
+</div> <!-- .page-sitemap-wrap -->
+
+
+        <div class="max-width-wrap clearfix">
+            
+            <div class="footer-item footer-item--slogan">
+                <div class="slogan-text">
+                    <img src="/templates/life_assist/img/site/footer_slogan.png" height="99" width="137" alt="A good life for all. lifeAssist" class="slogan-img">
+                    <p><img src="/templates/life_assist/img/site/logo_uniting_care.png" height="24" width="83" alt="UnitingCare Australia" class="uc-logo"></p>
+                    <p>UnitingCare lifeAssist, formerly UnitingCare Community Options (UCCO), proud member of the UnitingCare network, assisting 2 million Australians annually from 1,600 sites.</p>
+                </div>
+            </div>
+            
+            <div class="footer-item footer-item--contact">
+                <div class="contact-list">
+                    <a href="tel:1300 277 478">
+                        <span class="contact-icon contact-icon--hotline"></span>
+                        1300 ASSIST (1300 277 478)
+                    </a>
+                    <a href="tel:03 9239 2500">
+                        <span class="contact-icon contact-icon--phone"></span>
+                        03 9239 2500
+                    </a>
+                    <a href="tel:03 9239 2522">
+                        <span class="contact-icon contact-icon--fax"></span>
+                        03 9239 2522
+                    </a>
+                    <a href="mailto:info@lifeassist.org.au">
+                        <span class="contact-icon contact-icon--email"></span>
+                        info@lifeassist.org.au
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-item footer-item--links">
+                <div class="footer-links">
+                            <a href="http://lifeassist1.blocksassets.com/assets/lifeassist/lifeassist-site/qIDBe0QaKccZAYr/Chinese-lifeAssist-website-foreign-language-information-sheets.pdf" target="_blank">繁體 - 简体 (Chinese, Traditional - Simple)</a><br>
+                            <a href="http://lifeassist0.blocksassets.com/assets/lifeassist/lifeassist-site/Pnv24eiF4pm76Po/Italian-lifeAssist-website-foreign-language-information-sheets.pdf" target="_blank">Italiano (Italian)</a><br>
+                            <a href="http://lifeassist2.blocksassets.com/assets/lifeassist/lifeassist-site/SuqAC4Ju4RIcwSX/Greek-lifeAssist-website-foreign-language-information-sheets.pdf" target="_blank">ελληνικά (Greek)</a><br>
+                            <a href="http://lifeassist3.blocksassets.com/assets/lifeassist/lifeassist-site/bauLJAnhJKLNzAT/Polish-lifeAssist-website-foreign-language-information-sheets.pdf" target="_blank">Polski (Polish)</a><br>
+                            <a href="http://lifeassist3.blocksassets.com/assets/lifeassist/lifeassist-site/fwlTN1pUSnFWHoV/01-Privacy-Policy-10-06-14-1-.pdf" target="_blank">lifeAssist Privacy Policy</a><br>
+                    <a href="#" class="toggle-sitemap">Sitemap</a>
+                    <div class="footer-social">
+                        <a class="footer-social-icon social-icon--facebook" href="https://www.facebook.com/UCLifeAssist" target="_blank" title="">
+                            Facebook
+</a>
+                        
+                        <a class="footer-social-icon social-icon--twitter" href="https://twitter.com/UCLifeAssist" target="_blank" title="">
+                            Twitter
+</a>
+
+                        <a class="footer-social-icon social-icon--youtube" href="https://www.youtube.com/c/UnitingCarelifeAssistGlenWaverley" target="_blank" title="">
+                            YouTube
+</a>
+
+                        <a class="link-assist-logo" href="http://www.linkassist.net.au/" target="_blank" title="">
+                            <img src="/templates/life_assist/img/site/link-assist-logo.png" width="117" height="23" alt="linkAssist">
+</a>
+
+                    </div>
+                    <br>
+                    <span class="copyright">
+                        © Copyright 2016 UnitingCare lifeAssist<br>
+                        <a href="http://www.blocksglobal.com" target="_blank">Website by BlocksGlobal.</a><br>
+                        <a href="http://www.blocksglobal.com" target="_blank">Powered by OpenSign.</a>
+                    </span>
+                </div>
+
+                <div class="footer-iso">
+                    <a href="#">
+                        <img src="/templates/life_assist/img/site/logo_iso_9001.png" height="121" width="54" alt="">
+                    </a>
+                </div>
+                
+
+            </div>
+
+        </div>
+    </div> <!-- .page-footer -->
+
+
+
+
+
+                <div class="page-overlay"></div>
+
+            </div> <!-- #container -->
+
+
+
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script>window.jQuery || document.write('<script src="/templates/life_assist/js/libs/jquery.min.js"><\/script>')</script>
+            <script src="/templates/life_assist/js/libs/jquery.validate.min.js"></script>
+            <script src="/templates/life_assist/js/build/site.js"></script>
+
+              <script type="text/javascript">
+            function Espy(properties) {
+    this.api_url = 'http://www.blocksservices.com/esp';
+    this.properties = properties;
+}
+
+Espy.prototype._now = function () {
+    return typeof Date.now === 'function' ? Date.now() : new Date().valueOf();
+}
+
+Espy.prototype._loadTime = function () {
+    if (typeof window.performance == 'object' && typeof window.performance.timing == 'object') {
+        var timing = window.performance.timing;
+        var loadTime = (timing.loadEventEnd - timing.fetchStart) / 1000.0;
+
+        if (loadTime > 0) {
+            return loadTime;
+        }
+    }
+};
+
+Espy.prototype._propertiesJSON = function () {
+    var properties = {
+        api_key:             this.properties.api_key,
+        event_category:      this.properties.event_category,
+        event_data:          this.properties.event_data,
+        event_name:          this.properties.event_name,
+        load_time:           this._loadTime(),
+        org_name:            this.properties.org_name,
+        page_name:           this.properties.page_name,
+        site_name:           this.properties.site_name,
+        template_group_name: this.properties.template_group_name,
+        timestamp:           this._now()
+    };
+
+    if (typeof window.Agent !== 'undefined') {
+        properties.device_id = Agent.deviceID;
+    }
+
+    return JSON.stringify(properties);
+};
+
+Espy.prototype._transmitEventData = function() {
+    if (typeof window.JSON !== 'object') {
+        return;
+    }
+
+    if (typeof window.Agent === 'undefined') {
+        if (window.jQuery) {
+            jQuery.ajax(this.api_url, {
+                contentType: 'application/json',
+                data: this._propertiesJSON(),
+                dataType: 'json',
+                type: 'POST'
+            });
+        }
+    } else {
+        payload = {
+            body: this._propertiesJSON(),
+            method: 'POST',
+            mimeType: 'application/json',
+            retries: 0,
+            url: this.api_url
+        };
+
+        if (Agent.version === undefined || Agent.version < 2) {
+            payload = JSON.stringify(payload);
+        }
+
+        Agent.forward().send(payload);
+    }
+};
+
+Espy.prototype.trigger = function(event_category, event_name, event_data) {
+    this.properties.event_category = event_category || "";
+    if (typeof this.properties.event_category !== 'string' || this.properties.event_category.length == 0) {
+        throw new Error("category must be a string!");
+    }
+
+    this.properties.event_name = event_name || "";
+    if (typeof this.properties.event_name !== 'string' || this.properties.event_name.length == 0) {
+        throw new Error("name must be a string!");
+    }
+
+    this.properties.event_data = event_data || {};
+    if (typeof this.properties.event_data !== 'object') {
+        throw new Error("data must be an object!");
+    }
+
+    this._transmitEventData();
+};
+
+Espy.prototype.sendData = Espy.prototype.trigger;
+
+
+            var espy = new Espy({"api_key":"d19680a0-b3f5-0131-f960-00163e57e472","org_name":"lifeassist","page_name":"contact","site_name":"life-assist-demo-site","template_group_name":"life_assist"});
+            setTimeout(function() {
+              espy.trigger('hit', 'page_hit');
+            }, 100)
+          </script>
+<script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {
+NREUMQ.push(["load",new Date().getTime()]);
+var e=document.createElement("script");
+e.type="text/javascript";
+e.src=(("http:"===document.location.protocol)?"http:":"https:") + "//" +
+  "js-agent.newrelic.com/nr-100.js";
+document.body.appendChild(e);
+if(NREUMQ.a)NREUMQ.a();
+};
+NREUMQ.a=window.onload;window.onload=NREUMQ.f;
+};
+NREUMQ.push(["nrfj","bam.nr-data.net","8deefa7223","603961","IlleERYKWF0AQE1CUwZTQ0oXDVtG",0,19,new Date().getTime(),"","","","",""]);</script></body>
+</html>

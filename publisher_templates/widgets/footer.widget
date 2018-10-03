@@ -1,0 +1,245 @@
+<% if @mode == 'edit' %>
+    <!-- EDIT MODE : start -->
+    <link rel="stylesheet" href="/templates/life_assist/css/blocks.css">
+
+    <div id="edit_container">
+
+
+        <!-- EDIT SECTION 03 -->
+        <div class="edit_section">
+            <div class="section_heading">
+                <label for="section_03" class="h1">Slogan</label>
+                <label for="section_03" class="section_toggle">show/hide</label>
+            </div>
+            <input type="checkbox" class="section_checkbox" name="section_03" id="section_03" checked>
+            <div class="section_content">
+
+                <div class="el_wrap">
+                    <label>Slogan</label>
+                    <%= render :textual => 'footer_slogan', :default => 'lifeAssist (formerly Uniting Care Community Options) is an agency of the UnitingCare network.', :maxlength => '175' %>
+                </div>
+
+            </div>
+        </div> <!-- .edit_section 03 -->
+
+
+        <!-- EDIT SECTION 01 -->
+        <div class="edit_section">
+            <div class="section_heading">
+                <label for="section_01" class="h1">Contact details</label>
+                <label for="section_01" class="section_toggle">show/hide</label>
+            </div>
+            <input type="checkbox" class="section_checkbox" name="section_01" id="section_01" checked>
+            <div class="section_content">
+
+
+                <div class="el_wrap">
+                    <label>Hotline Number (plain number, is used as the link value)</label>
+                    <%= render :textual => 'hotline_number', :default => '1300 277 478', :maxlength => '50' %>
+                    <label>Hotline Text (can include text like vanity number)</label>
+                    <%= render :textual => 'hotline_text', :default => '1300 ASSIST (1300 277 478)', :maxlength => '50' %>
+                </div>
+
+                <div class="el_wrap">
+                    <label>Phone</label>
+                    <%= render :textual => 'phone', :default => '03 9239 2500', :maxlength => '50' %>
+                </div>
+
+                <div class="el_wrap">
+                    <label>Fax</label>
+                    <%= render :textual => 'fax', :default => '03 9239 2522', :maxlength => '50' %>
+                </div>
+
+                <div class="el_wrap">
+                    <label>Email</label>
+                    <%= render :textual => 'email', :default => 'info@lifeassist.org.au', :maxlength => '50' %>
+                </div>
+                
+            </div>
+        </div> <!-- .edit_section 01 -->
+
+
+
+        <!-- EDIT SECTION 02 -->
+        <div class="edit_section">
+            <div class="section_heading">
+                <label for="section_02" class="h1">Footer Links</label>
+                <label for="section_02" class="section_toggle">show/hide</label>
+            </div>
+            <input type="checkbox" class="section_checkbox" name="section_02" id="section_02" checked>
+            <div class="section_content">
+                
+                <div class="el_wrap">
+                    <label>Choose up to 5 links:</label>
+                    <%= render :region => 'footer_links', :max_repeats => 5, :elective => true do %>
+                        <%= render :link => "single_link", :text_editable => true, :link_value => "#", :text => "Link text" %>
+                    <% end %>
+                </div>
+
+            </div>
+        </div> <!-- .edit_section 02 -->
+
+
+        <!-- EDIT SECTION 04 -->
+        <div class="edit_section">
+            <div class="section_heading">
+                <label for="section_04" class="h1">Social Media Links</label>
+                <label for="section_04" class="section_toggle">show/hide</label>
+            </div>
+            <input type="checkbox" class="section_checkbox" name="section_04" id="section_04" checked>
+            <div class="section_content">
+                
+                <p>Leave any of these blank and the icon won't appear.</p>
+
+                <div class="el_wrap">
+                    <label>Facebook</label>
+                    <%= render :link => "facebook", :text_editable => false, :link_value => '#' do %>
+                        Facebook link
+                    <% end %>
+                </div>
+
+                <div class="el_wrap">
+                    <label>Twitter</label>
+                    <%= render :link => "tumblr", :text_editable => false, :link_value => '#' do %>
+                        Twitter link
+                    <% end %>
+                </div>
+
+                <div class="el_wrap">
+                    <label>YouTube</label>
+                    <%= render :link => "youtube", :text_editable => false, :link_value => '#' do %>
+                        YouTube link
+                    <% end %>
+                </div>
+
+                <div class="el_wrap">
+                    <label>linkAssist</label>
+                    <%= render :link => "linkassist", :text_editable => false, :link_value => '#' do %>
+                        linkAssist link
+                    <% end %>
+                </div>
+
+            </div>
+        </div> <!-- .edit_section 04 -->
+
+
+        <!-- EDIT SECTION 05 -->
+        <div class="edit_section">
+            <div class="section_heading">
+                <label for="section_05" class="h1">Copyright notice</label>
+                <label for="section_05" class="section_toggle">show/hide</label>
+            </div>
+            <input type="checkbox" class="section_checkbox" name="section_05" id="section_05" checked>
+            <div class="section_content">
+                
+                <div class="el_wrap">
+                    <label>Copyright notice</label>
+                    <%= render :textual => 'footer_copyright', :default => "&copy; Copyright 2014 UnitingCare lifeAssist Pty Ltd.", :maxlength => '65' %>
+                </div>
+
+            </div>
+        </div> <!-- .edit_section 05 -->
+
+
+
+    </div> <!-- #edit_container -->
+
+    <!-- end : EDIT MODE -->
+<% elsif @mode != 'preview' %>
+    <% # PUBLISH MODE %>
+
+    <div class="page-footer">
+
+        <%= render :navigation => "Main" , :template_name => 'publisher_templates/nav_templates/sitemap.nav' %>
+
+        <div class="max-width-wrap clearfix">
+            
+            <div class="footer-item footer-item--slogan">
+                <div class="slogan-text">
+                    <img src="/templates/life_assist/img/site/footer_slogan.png" height="99" width="137" alt="A good life for all. lifeAssist" class="slogan-img">
+                    <p><img src="/templates/life_assist/img/site/logo_uniting_care.png" height="24" width="83" alt="UnitingCare Australia" class="uc-logo"></p>
+                    <p><%= page_data.content.footer_slogan.text %></p>
+                </div>
+            </div>
+            
+            <div class="footer-item footer-item--contact">
+                <div class="contact-list">
+                    <a href="tel:<%= page_data.content.hotline_number.text %>">
+                        <span class="contact-icon contact-icon--hotline"></span>
+                        <%= page_data.content.hotline_text.text %>
+                    </a>
+                    <a href="tel:<%= page_data.content.phone.text %>">
+                        <span class="contact-icon contact-icon--phone"></span>
+                        <%= page_data.content.phone.text %>
+                    </a>
+                    <a href="tel:<%= page_data.content.fax.text %>">
+                        <span class="contact-icon contact-icon--fax"></span>
+                        <%= page_data.content.fax.text %>
+                    </a>
+                    <a href="mailto:<%= page_data.content.email.text %>">
+                        <span class="contact-icon contact-icon--email"></span>
+                        <%= page_data.content.email.text %>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-item footer-item--links">
+                <div class="footer-links">
+                    <% if page_data.content.footer_links.elected %>
+                        <% page_data.content.footer_links.repeats.each do |repeat| %>
+                            <%
+                                target = ''
+                                target = 'target="_blank"' if repeat.single_link.new_window
+                            %>
+                            <a href="<%= repeat.single_link.external_url %>" <%= target.html_safe %>><%= repeat.single_link.text %></a><br>
+                        <% end %>
+                    <% end %>
+                    <a href="#" class="toggle-sitemap">Sitemap</a>
+                    <div class="footer-social">
+                        <%= render :link => "facebook", :text_editable => false, :link_value => '#', :link_attributes => { :class => "footer-social-icon social-icon--facebook" } do %>
+                            Facebook
+                        <% end %>
+                        
+                        <%= render :link => "tumblr", :text_editable => false, :link_value => '#', :link_attributes => { :class => "footer-social-icon social-icon--twitter" } do %>
+                            Twitter
+                        <% end %>
+
+                        <%= render :link => "youtube", :text_editable => false, :link_value => '#', :link_attributes => { :class => "footer-social-icon social-icon--youtube" } do %>
+                            YouTube
+                        <% end %>
+
+                        <%= render :link => "linkassist", :text_editable => false, :link_value => '#', :link_attributes => { :class => "link-assist-logo" } do %>
+                            <img src="/templates/life_assist/img/site/link-assist-logo.png" width="117" height="23" alt="linkAssist">
+                        <% end %>
+
+                    </div>
+                    <br>
+                    <span class="copyright">
+                        <%= page_data.content.footer_copyright.text.html_safe %><br>
+                        <a href="http://www.blocksglobal.com" target="_blank">Website by BlocksGlobal.</a><br>
+                        <a href="http://www.blocksglobal.com" target="_blank">Powered by OpenSign.</a>
+                    </span>
+                </div>
+
+                <div class="footer-iso">
+                    <a href="#">
+                        <img src="/templates/life_assist/img/site/logo_iso_9001.png" height="121" width="54" alt="">
+                    </a>
+                </div>
+                
+
+            </div>
+
+        </div>
+    </div> <!-- .page-footer -->
+
+<% else %>
+
+    <link rel="stylesheet" href="/templates/life_assist/css/blocks.css">
+
+    <div class="blocks_help">
+        Sorry, preview is not available for this widget.
+    </div>
+
+<% end %>
+

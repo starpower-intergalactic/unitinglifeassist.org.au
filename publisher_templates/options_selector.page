@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lte-ie9 ie8"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js lte-ie9 ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <title><%= title %></title>
+        <meta name="keywords" content="<%= keywords %>">
+        <meta name="description" content="<%= description %>">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <% if @mode == 'edit' %>
+            <link rel="stylesheet" href="/templates/life_assist/css/blocks.css">
+        <% else %>
+            <%= render :region => 'publisher_templates/publish_mode/fonts' %>
+            <link rel="stylesheet" href="/templates/life_assist/css/all.css">
+            <script src="/templates/life_assist/js/libs/modernizr.custom.min.js"></script>
+            <!--[if IE 8]>
+                <script src="/templates/life_assist/js/libs/respond.min.js"></script>
+            <![endif]-->
+        <% end %>
+        
+    </head>
+    <!--
+        life_assist
+        options_selector.page
+    -->
+    <body>
+
+        <% if @mode == 'edit' %>
+            <%= render :region => 'publisher_templates/edit_mode/options_selector' %>
+        <% else %>
+            
+            <div id="container">
+
+                <div class="page-header">
+
+                    <%= include_site_widget('help_bar') %>
+                    
+                    <%= render :region => 'publisher_templates/shared/site_search' %>
+
+                    <%= render :navigation => "Main" , :template_name => 'publisher_templates/nav_templates/main.nav' %>
+                    
+                </div> <!-- .page-header -->
+
+                <div class="page-content">
+                
+                    <div class="wizard-wrap">
+
+                        <div class="wizard-header">
+                            <h1><%= page_data.content.page_title.text.html_safe %></h1>
+                            <div class="wizard-navigation clearfix" id="wizard-nav">
+                                <div class="step step--dummy step--1 step--active step--showing">
+                                    <div class="step-icon"></div>
+                                    <div class="step-caption">
+                                        <em>&nbsp;</em> &nbsp;
+                                    </div>
+                                </div>
+                            </div> <!-- .wizard-navigation -->
+                        </div> <!-- .wizard-header -->
+                        
+                        <div class="wizard-answer-wrap max-width-wrap" id="wizard-answers">
+                                                    
+                            <div class="wizard-answers-loading">
+                                <div class="wizard-answer answer--empty"><div class="answer-text"></div><button class="btn">&nbsp;</button></div>
+                                <div class="wizard-answer answer--empty"><div class="answer-text"></div><button class="btn">&nbsp;</button></div>
+                                <div class="wizard-answer answer--empty"><div class="answer-text"></div><button class="btn">&nbsp;</button></div>
+                                <div class="wizard-answer answer--empty"><div class="answer-text"></div><button class="btn">&nbsp;</button></div>
+                                <div class="wizard-answer answer--empty"><div class="answer-text"></div><button class="btn">&nbsp;</button></div>
+                                <div class="wizard-answer answer--empty"><div class="answer-text"></div><button class="btn">&nbsp;</button></div>
+                                <img src="/templates/life_assist/img/site/icon_loader_white.gif" width="32" height="32" class="loader">
+                            </div>
+
+                        </div> <!-- .wizard-answer-wrap -->
+
+                    </div> <!-- .wizard-wrap -->
+
+                </div> <!-- .page-content -->
+
+                <%= include_site_widget('footer') %>
+
+                <div class="page-overlay"></div>
+
+            </div> <!-- #container -->
+
+        <% end %>
+
+
+        <% if @mode != 'edit' %>
+
+            <%
+                terms_and_conditions = ""
+                
+                # contact_page    = site.pages.detect{ |e| e.template == "publisher_templates/contact.page" }
+                # above did not work (anymore), 'template' doesn't seem present, going with page ID
+                contact_page    = site.pages.detect{ |e| e.id == 287 }
+                unless contact_page.blank?
+                    terms_and_conditions = PageData.new(contact_page).content.terms_and_conditions.text
+                end
+            %>
+
+            <div class="hidden" id="terms_source"><%= terms_and_conditions.html_safe %></div>
+            <div class="hidden" id="selector_form_action"><%= form_action_url('Options_Selector') %></div>
+            <div class="hidden" id="email_confirmation_form_action"><%= form_action_url('Options_Selector_Email') %></div>
+
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script>window.jQuery || document.write('<script src="/templates/life_assist/js/libs/jquery.min.js"><\/script>')</script>
+            <script src="/templates/life_assist/js/libs/jquery.validate.min.js"></script>
+            <script src="/templates/life_assist/js/build/site.js"></script>
+            <script src="/templates/life_assist/js/libs/require.js" data-main="/templates/life_assist/js/build/wizard.js"></script>
+        <% end %>
+
+    </body>
+</html>

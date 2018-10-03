@@ -1,0 +1,207 @@
+.video-box-wrap {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0%;
+	z-index: 9999;
+	overflow: hidden;
+	-webkit-perspective: 1000;
+
+	-webkit-transition: height 0s;
+	   -moz-transition: height 0s;
+	        transition: height 0s;
+	        
+	-webkit-transition-delay: 0.5s;
+	   -moz-transition-delay: 0.5s;
+	        transition-delay: 0.5s;
+
+	&.show {
+		height: 100%;
+		-webkit-transition-delay: 0s;
+		   -moz-transition-delay: 0s;
+		        transition-delay: 0s;
+	}
+}
+
+@media screen and (min-width:48em){
+	.video-box-wrap {
+		position: absolute;
+	}
+}
+
+.video-backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	background-color: rgba(0,0,0,0.5);
+	-webkit-transition: opacity 0.5s;
+	   -moz-transition: opacity 0.5s;
+	        transition: opacity 0.5s;
+}
+.video-box-wrap.show .video-backdrop {
+	opacity: 1;
+}
+
+.no-rgba {
+	.video-backdrop {
+		background-color: black;
+	}
+	.video-box-wrap.show .video-backdrop {
+		display: block;
+		opacity: 0.5;
+		filter: alpha(opacity=50);
+	}
+}
+
+
+
+.video-box {
+	position: relative;
+	top: 50%;
+	background-color: black;
+	/*padding-bottom: 56.25%;*/
+	margin: 0 auto;
+	/*height: 300px;*/
+	max-width: 720px;
+	z-index: 9999;
+	opacity: 0;
+
+	-webkit-transform: translateY(-50%) rotateX(90deg);
+	   -moz-transform: translateY(-50%) rotateX(90deg);
+	    -ms-transform: translate(0,-50%);
+	        transform: translateY(-50%) rotateX(90deg);
+
+	-webkit-transition: all 0.5s;
+	   -moz-transition: all 0.5s;
+	        transition: all 0.5s;
+
+	video {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+.video-box-wrap.show .video-box {
+	opacity: 1;
+	-webkit-transform: translateY(-50%) rotateX(0deg);
+	   -moz-transform: translateY(-50%) rotateX(0deg);
+	    -ms-transform: translateY(-50%) rotateX(0deg);
+	        transform: translateY(-50%) rotateX(0deg);
+}
+
+.ie8 {
+	.video-box {
+		top: 20px;
+		width: 640px;
+		height: 360px;
+
+		.vjs-control-bar {
+			display: none;
+		}
+	}
+}
+
+
+.video-controls {
+	position: absolute;
+	left: 12px;
+	right: 12px;
+	bottom: 12px;
+	background-color: $brandColor;
+	opacity: 0.4;
+
+	-webkit-transition: opacity 0.5s;
+	   -moz-transition: opacity 0.5s;
+	        transition: opacity 0.5s;
+}
+.video-box:hover .video-controls {
+	opacity: 0.75;
+}
+
+.video-control-item {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	float: left;
+	cursor: pointer;
+	opacity: 0.8;
+
+	&:hover {
+		background-color: rgba(0,0,0,0.25);
+		opacity: 1;
+	}
+
+	&:active {
+		background-color: rgba(0,0,0,0.5);
+	}
+}
+
+.video-stop {
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 50%;
+		height: 50%;
+		top: 25%;
+		left: 25%;
+		background-color: white;
+	}
+}
+
+.video-play {
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 0;
+		height: 0;
+		top: 7px;
+		left: 12px;
+		background-color: transparent;
+		border: 8px solid;
+		border-color: transparent transparent transparent white; 
+	}
+}
+
+.video-title {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: $brandColor;
+	font-family: $headingFont;
+	line-height: 1em;
+	padding: 12px;
+	opacity: 0.5;
+	-webkit-transition: all 0.5s;
+	   -moz-transition: all 0.5s;
+	        transition: all 0.5s;
+
+	&:hover {
+		background-color: rgba(0,0,0,0.5);
+	}
+}
+.video-box:hover .video-title {
+	opacity: 1;
+}
+
+.video-close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	padding: 10px 10px 7px 10px;
+	line-height: 1em;
+
+	&:hover {
+		background-color: rgba(0,0,0,0.5);
+	}
+
+	&:active {
+		background-color: rgba(0,0,0,0.75);
+	}
+}

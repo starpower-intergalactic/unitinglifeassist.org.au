@@ -1,0 +1,155 @@
+.wizard-summary {
+	padding: 1em;
+}
+
+.gray-box {
+	background-color: $colorLightGray;
+	padding: 1em;
+	margin: 0 0 1.5em 0;
+	position: relative;
+	
+	&:after {
+		content: '';
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		margin: 0 0 0 -20px;
+		display: block;
+		border-style: solid;
+		border-width: 20px;
+		border-color: $colorLightGray transparent transparent transparent;
+	}
+
+	.box-heading {
+		font-size: 1.3em;
+		line-height: 1.2em;
+		padding: 0 0 0.5em 0;
+		margin: 0;
+		font-family: $headingFont;
+		border-bottom: 1px solid;
+	}
+
+	ol {
+		margin: 0;
+		padding: 0.5em 0 0 2em;
+	}
+
+	li {
+		font-size: 0.9em;
+		line-height: 1.2em;
+		margin-top: 0.5em;
+	}
+}
+
+.mid-heading {
+	font-size: 1.3em;
+	line-height: 1.2em;
+	margin: 0 0 0.6em 0;
+	font-family: $headingFont;
+	text-align: center;
+}
+
+.package-list {
+}
+
+.package {
+
+	padding: 1.5em 1em;
+	margin: 0 0 0.5em 0;
+	background-color: $brandColor;
+	position: relative;
+
+	.package-close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 3em;
+		height: 3em;
+		text-align: center;
+		line-height: 3.5em;
+		cursor: pointer;
+
+		.icon {
+
+		}
+	}
+
+	.package-heading {
+		font-size: 1em;
+		line-height: 1.2em;
+		margin: 0 0 0.5em 0;
+		font-family: $headingFont;
+	}
+
+	.package-description {
+		p {
+			font-size: 0.85em;
+			line-height: 1.2em;
+			margin: 0;
+		}
+	}
+}
+
+.package-list-empty {
+	display: none;
+	line-height: 1.2em;
+}
+
+@media screen and (min-width:40em){
+	.gray-box {
+		padding: 2em;
+		margin: 0 0 1.75em 0;
+		
+		.box-heading {
+			font-size: 1.75em;
+			line-height: 1.2em;
+			padding: 0 0 0.75em 0;
+		}
+
+		ol {
+			margin: 0;
+			padding: 0.5em 0 0 2em;
+		}
+
+		li {
+			line-height: 1.2em;
+			margin-top: 1em;
+		}
+	}
+
+	.mid-heading {
+		font-size: 1.75em;
+		line-height: 1.2em;
+		margin: 0 0 0.6em 0;
+	}
+
+	.package {
+
+		padding: 1.5em 2em;
+		margin: 0 0 0.5em 0;
+
+		.package-close {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 3em;
+			height: 3em;
+			text-align: center;
+			line-height: 3.5em;
+			cursor: pointer;
+		}
+
+		.package-heading {
+			font-size: 1.1em;
+			line-height: 1.2em;
+			margin: 0 0 0.4em 0;
+		}
+
+		.package-description {
+			p {
+				font-size: 0.9em;
+				line-height: 1.2em;
+			}
+		}
+	}
+}

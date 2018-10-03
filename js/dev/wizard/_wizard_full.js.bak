@@ -1,0 +1,512 @@
+// DATA
+
+var ANSWERS = [
+    {
+        id         : 1,
+        step       : 1,
+        next       : 2,
+        parentId   : null,
+        answer     : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis dolorum ipsam ducimus veniam vitae assumenda at nihil asperiores ex. Ea, commodi porro id laboriosam ducimus veniam labore quia ad.',
+        breadcrumb : 'assumenda'
+    },
+        {
+            id         : 11,
+            step       : 2,
+            next       : 3,
+            parentId   : 1,
+            answer     : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis dolorum ipsam ducimus veniam vitae assumenda at nihil asperiores ex. Ea, commodi porro id laboriosam ducimus veniam labore quia ad.',
+            breadcrumb : 'assumenda'
+        },
+        {
+            id         : 111,
+            step       : 3,
+            next       : 4,
+            parentId   : 11,
+            answer     : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis dolorum ipsam ducimus veniam vitae assumenda at nihil asperiores ex. Ea, commodi porro id laboriosam ducimus veniam labore quia ad.',
+            breadcrumb : 'assumenda'
+        },
+        {
+            id         : 1111,
+            step       : 4,
+            next       : 5,
+            parentId   : 111,
+            answer     : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis dolorum ipsam ducimus veniam vitae assumenda at nihil asperiores ex. Ea, commodi porro id laboriosam ducimus veniam labore quia ad.',
+            breadcrumb : 'assumenda'
+        },
+    {
+        id         : 2,
+        step       : 1,
+        next       : 2,
+        parentId   : null,
+        answer     : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis dolorum ipsam ducimus veniam vitae assumenda at nihil asperiores ex. Ea, commodi porro id laboriosam ducimus veniam labore quia ad.',
+        breadcrumb : 'assumenda'
+    },
+        {
+            id         : 21,
+            step       : 2,
+            next       : 3,
+            parentId   : 2,
+            answer     : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis dolorum ipsam ducimus veniam vitae assumenda at nihil asperiores ex. Ea, commodi porro id laboriosam ducimus veniam labore quia ad.',
+            breadcrumb : 'assumenda'
+        },
+        {
+            id         : 22,
+            step       : 2,
+            next       : 3,
+            parentId   : 2,
+            answer     : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis dolorum ipsam ducimus veniam vitae assumenda at nihil asperiores ex. Ea, commodi porro id laboriosam ducimus veniam labore quia ad.',
+            breadcrumb : 'assumenda'
+        },
+    {
+        id         : 3,
+        step       : 1,
+        next       : 2,
+        parentId   : null,
+        answer     : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis dolorum ipsam ducimus veniam vitae assumenda at nihil asperiores ex. Ea, commodi porro id laboriosam ducimus veniam labore quia ad.',
+        breadcrumb : 'assumenda'
+    },
+        {
+            id         : 31,
+            step       : 2,
+            next       : 3,
+            parentId   : 3,
+            answer     : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis dolorum ipsam ducimus veniam vitae assumenda at nihil asperiores ex. Ea, commodi porro id laboriosam ducimus veniam labore quia ad.',
+            breadcrumb : 'assumenda'
+        },
+        {
+            id         : 32,
+            step       : 2,
+            next       : 3,
+            parentId   : 3,
+            answer     : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis dolorum ipsam ducimus veniam vitae assumenda at nihil asperiores ex. Ea, commodi porro id laboriosam ducimus veniam labore quia ad.',
+            breadcrumb : 'assumenda'
+        },
+        {
+            id         : 33,
+            step       : 2,
+            next       : 3,
+            parentId   : 3,
+            answer     : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis dolorum ipsam ducimus veniam vitae assumenda at nihil asperiores ex. Ea, commodi porro id laboriosam ducimus veniam labore quia ad.',
+            breadcrumb : 'assumenda'
+        },
+        {
+            id         : 34,
+            step       : 2,
+            next       : 3,
+            parentId   : 3,
+            answer     : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis dolorum ipsam ducimus veniam vitae assumenda at nihil asperiores ex. Ea, commodi porro id laboriosam ducimus veniam labore quia ad.',
+            breadcrumb : 'assumenda'
+        },
+        {
+            id         : 35,
+            step       : 2,
+            next       : 3,
+            parentId   : 3,
+            answer     : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis dolorum ipsam ducimus veniam vitae assumenda at nihil asperiores ex. Ea, commodi porro id laboriosam ducimus veniam labore quia ad.',
+            breadcrumb : 'assumenda'
+        },
+        {
+            id         : 36,
+            step       : 2,
+            next       : 3,
+            parentId   : 3,
+            answer     : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nobis dolorum ipsam ducimus veniam vitae assumenda at nihil asperiores ex. Ea, commodi porro id laboriosam ducimus veniam labore quia ad.',
+            breadcrumb : 'assumenda'
+        }
+];
+
+
+
+// MODELS
+
+var WizardModel = Backbone.Model.extend({
+    defaults : {
+        currentStep : 1,
+
+        step_1_status     : 'active',
+        step_1_breadcrumb : '<em>1.</em> For who?',
+
+        step_2_status     : 'not-yet-selected',
+        step_2_breadcrumb : '<em>2.</em> The cause?',
+
+        step_3_status     : 'not-yet-selected',
+        step_3_breadcrumb : '<em>3.</em> What?',
+
+        step_4_status     : 'not-yet-selected',
+        step_4_breadcrumb : '<em>4.</em> Why?',
+
+        step_5_status     : 'not-yet-selected',
+        step_5_breadcrumb : '',
+
+        step_6_status     : 'not-yet-selected',
+        step_6_breadcrumb : '',
+
+        selectedAnswers   : [ null, null, null, null, null, null ],
+
+        selectedPackages  : []
+    },
+
+    initialize : function(){
+
+    },
+
+    getAnswerForStep : function( step ){
+        var answers = this.get('selectedAnswers');
+
+        if( step < 0 ){
+            throw new Error('Cannot get answer for step smaller than zero.');
+        }
+        if( step > 4 ){ return null; }
+
+        return answers[ step ];
+    },
+
+    getParentAnswerForStep : function( step ){
+        return this.getAnswerForStep( step - 1 );
+    },
+
+    setAnswer : function( step, answer ){
+        var answers = this.get('selectedAnswers');
+
+        answers = _.map( answers, function( aw, i ){
+            if( i < step ){
+                return aw;
+            }
+            if( i === step ){
+                return answer;
+            }
+            else {
+                return null;
+            }
+        });
+
+        this.set('selectedAnswers', answers);
+    },
+
+    resetStepsFrom : function( step ){
+        
+
+    },
+
+    setStatus : function( step, config ){
+        var setObj     = {},
+            breadcrumb = config.breadcrumb || '',
+            answer     = config.answer || null,
+            status     = config.status || '';
+
+        if( status === '' && answer !== null ){
+            status = 'done';
+        }
+        if( answer === null && status === '' ){
+            status = 'not-yet-selected';
+        }
+
+        setObj['step_'+step+'_status']     = status;
+        setObj['step_'+step+'_breadcrumb'] = breadcrumb;
+
+        if( step < 5 ){
+            // set next step's parent to the selected answer
+            setObj['step_'+(step+1)+'_parent']     = answer;
+        }
+
+        console.log('@model:setStatus', setObj);
+
+        this.set( setObj );
+    },
+
+    resetStep : function( step ){
+        var resetObj = {};
+
+        if( step < 0 || step > 6 ){
+            return false;
+        }
+
+        resetObj['step_'+step+'_id']         = this.defaults['step_'+step+'_id'];
+        resetObj['step_'+step+'_status']     = this.defaults['step_'+step+'_status'];
+        resetObj['step_'+step+'_breadcrumb'] = this.defaults['step_'+step+'_breadcrumb'];
+
+        this.set( resetObj );
+
+        return true;
+    },
+
+    setInactive : function( from, to ){
+        for(var i = from+1; i < to; i++ ){
+            this.setStatus(i, {
+                status : 'inactive'
+            });
+        }
+    },
+
+    setCurrent : function( answer, nextStep ){
+        var previousCurrent = this.get('currentStep');
+
+        this.setAnswer( previousCurrent, answer);
+
+        this.set('currentStep', nextStep );
+        this.setStatus( nextStep, {
+            status : 'active'
+        });
+
+
+        if( previousCurrent > nextStep ){
+            this.setInactive( step, previousCurrent );
+        }
+    }
+});
+
+// COLLECTIONS
+
+var AnswerCollection = Backbone.Collection.extend({
+
+    getAnswers : function( step, parentAnswer ){
+        var filteredAnswers = this.filter(function( answer ){
+            return answer.get('parentId') === parentAnswer && answer.get('step') === step;
+        });
+
+        return filteredAnswers;
+    }
+});
+
+
+
+
+// VIEWS
+
+var AnswerView = Marionette.ItemView.extend({
+    template  : '#t-answer',
+    className : function(){
+        var className = 'wizard-answer',
+            step      = this.model.get('step'),
+            id        = this.model.get('id');
+
+        function isSelected( step, id ){
+            if( step < 5 ){
+                return id === Wizard.appModel.getAnswerForStep( step );
+            }
+            else {
+
+            }
+
+            return false;
+        }
+
+        if( isSelected( step, id ) ){
+            className += ' answer--selected';
+        }
+
+        return className;
+    },
+
+    isSelected : false,
+
+    ui : {
+        selectBtn : '.btn'
+    },
+
+    events : {
+        'click @ui.selectBtn' : 'selectAnswer'
+    },
+
+    selectAnswer : function(event){
+        console.log('answer selected', this.model.get('id'), 'step', this.model.get('step') );
+
+        var currentStep =  this.model.get('step'),
+            model = this.model;
+
+        if( currentStep < 5 ){
+            this.selectAndGoToNext();
+
+            this.$el.closest('.answer-list-wrap').addClass('answers-out');
+
+            setTimeout(function(){
+                Wizard.vent.trigger('advance:step', {
+                    step       : currentStep,
+                    answer     : model.get('id'),
+                    next       : model.get('next'),
+                    breadcrumb : 'Foo'
+                });
+            }, 2000);
+        }
+        else {
+            this.togglePackage();
+        }
+
+
+        
+    },
+
+    selectAndGoToNext : function(){
+        this.$el
+            .addClass('answer--selected')
+            .siblings().removeClass('answer--selected');
+    },
+
+    togglePackage : function(){
+        this.isSelected = !this.isSelected;
+        this.$el.toggleClass('answer--selected', this.isSelected );
+    }
+});
+
+
+
+var AnswerListView = Marionette.CollectionView.extend({
+    className : 'answer-list-wrap',
+    itemView : AnswerView
+});
+
+
+
+var StepNavView = Marionette.ItemView.extend({
+
+    template : '#t-step-nav',
+
+    className : 'view-wrapper',
+    
+    ui : {
+        doneSteps  : '.step--done',
+        activeStep : '.step--active'
+    },
+
+    events : {
+        'click @ui.doneSteps'  : 'goToStep',
+        'click @ui.activeStep' : 'goToStep'
+    },
+
+    initialize : function(){
+        this.listenTo( this.model, 'change', this.render );
+    },
+
+    goToStep : function( event ){
+        var $target   = $(event.currentTarget),
+            stepIndex = $target.data('step-index');
+
+        console.log('goToStep', stepIndex );
+        Wizard.vent.trigger('show:step', stepIndex ); 
+    }
+});
+
+
+
+// APP
+
+var Wizard = new Marionette.Application();
+
+// Create model representing the state of the app
+Wizard.appModel = new WizardModel();
+// Create collection with all possible answers/options
+Wizard.answerCollection = new AnswerCollection( ANSWERS );
+// Create view for the app navigation
+Wizard.stepNavView = new StepNavView({
+        model : Wizard.appModel
+    });
+
+Wizard.addRegions({
+    navRegion     : '#wizard-nav',
+    answerRegion : '#wizard-answers'
+});
+
+
+
+
+// MODULES
+
+// Router
+var routerModule = Wizard.module('Router', function( Router, App, Backbone, Marionette, $, _ ){
+
+    App.vent.on('show:step', function( step ){
+        console.log('ROUTER', 'show:step', arguments);
+        App.StepController.showStep( step );
+    });
+
+    App.vent.on('show:form', function(){
+        console.log('ROUTER', 'show:form', arguments);
+        App.StepController.showForm();
+    });
+
+    App.vent.on('advance:step', function( params ){
+        console.log('ROUTER', 'advance:step', params);
+        App.StepController.advanceStep( params );
+    });
+
+});
+routerModule.on('start', function(){ console.log('Router Module started'); });
+
+
+
+// Controller
+var stepController = Wizard.module('StepController', function( StepController, App, Backbone, Marionette, $, _ ){
+
+    StepController.showStep = function( step ){
+        console.log('@controller:StepController.showStep', step );
+
+        if( typeof step !== 'number' || step < 1 || step > 6 ){
+            throw new Error('Invalid step number: ' + step );
+        }
+
+        if( step === 6 ){
+            // Last step, show the signup form
+            this.showForm();
+            return;
+        }
+
+        var parentAnswer   = App.appModel.getParentAnswerForStep( step ),
+            answersForStep = App.answerCollection.getAnswers( step, parentAnswer ),
+            answerListView;
+
+        console.log('SHOW STEP:');
+        console.log('parentAnswer', parentAnswer);
+        console.log('answersForStep', answersForStep);
+
+        answerListView = new AnswerListView({
+            collection : new Backbone.Collection( answersForStep )
+        });
+
+        App.answerRegion.show( answerListView );
+    };
+
+    StepController.showForm = function(){
+        
+    };
+
+    StepController.advanceStep = function( params ){
+        console.log('@controller:StepController.advanceStep', params );
+
+        var currentStep = params.step,
+            nextStep    = params.next,
+            answerId    = params.answer,
+            breadcrumb  = params.breadcrumb;
+
+        App.appModel.setStatus( currentStep, {
+            status     : 'done',
+            breadcrumb : breadcrumb
+        });
+
+        if( nextStep > currentStep + 1 ){
+            // this answer is skipping steps
+            // set those to inactive
+            App.appModel.setInactive( currentStep, nextStep );
+        }
+
+        App.appModel.setCurrent( answerId, nextStep );
+
+        this.showStep( nextStep );
+    };
+
+});
+stepController.on('start', function(){ console.log('Controller Module started'); });
+
+
+
+// START
+
+Wizard.addInitializer(function(){
+    console.log('App initializing');
+    this.navRegion.show( this.stepNavView );
+});
+
+Wizard.on('start', function(){
+    this.vent.trigger('show:step', 1);
+});
+
+Wizard.start();

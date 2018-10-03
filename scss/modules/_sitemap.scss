@@ -1,0 +1,74 @@
+.page-sitemap-wrap {
+	height: 0;
+	overflow: hidden;
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	background-color: #343536;
+	background-image: url(../img/site/bg_hexagon_white.png);
+	border-bottom: 1px solid #111;
+
+/*	-webkit-transition: height 0.5s ease-out;
+	   -moz-transition: height 0.5s ease-out;
+	        transition: height 0.5s ease-out;*/
+}
+
+.page-sitemap {
+	padding: 1em;
+}
+
+.sitemap-item {
+	float: left;
+	width: 31.33%;
+	margin: 0 2% 2% 0;
+	font-size: 0.85em;
+
+	a {
+		display: block;
+
+		&.sitemap-top-link {
+			font-weight: bold;
+			color: $colorLightBlue;
+		}
+	}
+}
+
+.sitemap-item-4 {
+	clear: both;
+}
+
+
+
+@media screen and (min-width:48em){
+
+	.sitemap-item {
+		width: 23%;
+	}
+	
+	.sitemap-item-4 {
+		clear: none;
+	}
+
+	.sitemap-item-5 {
+		clear: both;
+	}
+}
+
+
+@media screen and (min-width:64em){
+
+	.sitemap-item {
+		width: 18%;
+	}
+	
+	.sitemap-item-5 {
+		clear: none;
+	}
+	
+	.sitemap-item-6 {
+		clear: both;
+	}
+}
+
