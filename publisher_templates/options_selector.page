@@ -23,6 +23,8 @@
             <![endif]-->
         <% end %>
         
+        <%= render :region => 'publisher_templates/publish_mode/uniting_skin' %>
+        
     </head>
     <!--
         life_assist
@@ -112,6 +114,8 @@
             <script src="/templates/life_assist/js/build/site.js"></script>
             <script src="/templates/life_assist/js/libs/require.js" data-main="/templates/life_assist/js/build/wizard.js"></script>
         <% end %>
+        
+        <%= render :region => 'publisher_templates/publish_mode/uniting_pop_up' %>
 
     </body>
 </html>
